@@ -241,6 +241,7 @@ img { display: block; max-width: 100%; }
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh; /* accounts for mobile address bar */
   display: flex;
   align-items: center;
   background: var(--hero-bg);
@@ -399,14 +400,25 @@ img { display: block; max-width: 100%; }
   transform: translate(-50%, -50%);
 }
 
+.tooth-main {
+  width: 220px;
+  filter: drop-shadow(0 20px 60px rgba(201,169,110,.2)) drop-shadow(0 4px 16px rgba(0,0,0,.4));
+  animation: float-tooth 6s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
 .tooth-canvas {
   width: 100%;
   height: 100%;
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   display: block;
   background: transparent;
+  pointer-events: none; /* never steal touch/scroll events */
+  touch-action: none;
+  transition: opacity .5s ease;
 }
 
 /* Loading spinner */
@@ -941,6 +953,12 @@ img { display: block; max-width: 100%; }
   .services-grid { grid-template-columns: 1fr; }
   .form-row.two-col { flex-direction: column; }
   .footer-cols { grid-template-columns: 1fr; }
-  .tooth-stage { width: 280px; height: 340px; }
-  .tooth-canvas { width: 100%; height: 100%; }
+  .tooth-stage { width: 260px; height: 320px; }
+  .tooth-main  { width: 180px; }
+}
+
+/* No WebGL on mobile — hide canvas, show SVG */
+@media (max-width: 768px) {
+  .tooth-canvas, #tooth-loader { display: none !important; }
+  .tooth-main { display: block !important; opacity: 1 !important; }
 }

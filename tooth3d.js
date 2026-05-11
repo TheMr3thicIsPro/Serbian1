@@ -1,7 +1,11 @@
 (function () {
   'use strict';
 
-  var canvas = document.getElementById('tooth-canvas');
+  /* Skip entirely on mobile — SVG fallback handles it */
+  if (window.innerWidth <= 768) return;
+
+  var canvas  = document.getElementById('tooth-canvas');
+  var svgTooth = document.getElementById('tooth-svg');
   if (!canvas || typeof THREE === 'undefined') return;
 
   /* ── Renderer ─────────────────────────────────────────── */
@@ -14,20 +18,17 @@
       powerPreference: 'high-performance',
     });
   } catch (e) {
-    canvas.style.display = 'none';
-    var le = document.getElementById('tooth-loader');
-    if (le) le.style.display = 'none';
-    return;
+    return; /* WebGL unavailable — SVG remains visible */
   }
 
   renderer.setClearColor(0x000000, 0);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.outputEncoding = THREE.sRGBEncoding;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMapping    = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.1;
 
   /* ── Scene / Camera ───────────────────────────────────── */
-  var scene  = new THREE.Scene();
+  var scene = new THREE.Scene();
 
   function stageSize() {
     var p = canvas.parentElement;
@@ -45,18 +46,12 @@
 
   /* ── Lighting ─────────────────────────────────────────── */
   scene.add(new THREE.AmbientLight(0xfff8f0, 0.55));
-
   var key = new THREE.DirectionalLight(0xffffff, 2.2);
-  key.position.set(3, 5, 4);
-  scene.add(key);
-
+  key.position.set(3, 5, 4); scene.add(key);
   var fill = new THREE.DirectionalLight(0xc9a96e, 0.55);
-  fill.position.set(-4, 2, 2);
-  scene.add(fill);
-
+  fill.position.set(-4, 2, 2); scene.add(fill);
   var rim = new THREE.DirectionalLight(0x9ecbff, 0.4);
-  rim.position.set(0, -3, -4);
-  scene.add(rim);
+  rim.position.set(0, -3, -4); scene.add(rim);
 
   /* ── Enamel material ──────────────────────────────────── */
   var enamelMat = new THREE.MeshPhysicalMaterial({
@@ -68,8 +63,8 @@
   });
 
   /* ── Load GLB ─────────────────────────────────────────── */
-  var loader = new THREE.GLTFLoader();
   var tooth  = null;
+  var loader = new THREE.GLTFLoader();
 
   loader.load(
     './tooth.glb',
@@ -80,15 +75,14 @@
       var center = box.getCenter(new THREE.Vector3());
       var size   = box.getSize(new THREE.Vector3());
       tooth.position.sub(center);
-      var maxDim = Math.max(size.x, size.y, size.z);
-      tooth.scale.setScalar(2.8 / maxDim);
-
-      tooth.traverse(function (node) {
-        if (node.isMesh) node.material = enamelMat;
-      });
-
+      tooth.scale.setScalar(2.8 / Math.max(size.x, size.y, size.z));
+      tooth.traverse(function (n) { if (n.isMesh) n.material = enamelMat; });
       tooth.rotation.x = -0.08;
       scene.add(tooth);
+
+      /* Swap: fade in canvas, fade out SVG */
+      canvas.style.opacity = '1';
+      if (svgTooth) { svgTooth.style.transition = 'opacity .5s'; svgTooth.style.opacity = '0'; }
 
       var loaderEl = document.getElementById('tooth-loader');
       if (loaderEl) loaderEl.style.opacity = '0';
@@ -107,23 +101,25 @@
     mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
   });
 
+  /* ── Pause when hero is off-screen ────────────────────── */
+  var visible = true;
+  if (typeof IntersectionObserver !== 'undefined') {
+    new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+    }, { threshold: 0 }).observe(canvas.parentElement || canvas);
+  }
+
   var autoAngle = 0, floatT = 0;
 
-  /* ── Render loop ──────────────────────────────────────── */
   function animate() {
     requestAnimationFrame(animate);
+    if (!visible || !tooth) { renderer.render(scene, camera); return; }
 
-    if (tooth) {
-      autoAngle += 0.006;
-      floatT     += 0.012;
-
-      var targetX = autoAngle + mouseX * 0.35;
-      var targetY = mouseY * 0.18;
-
-      tooth.rotation.y += (targetX - tooth.rotation.y) * 0.04;
-      tooth.rotation.x += (-0.08 + targetY - tooth.rotation.x) * 0.04;
-      tooth.position.y  = Math.sin(floatT) * 0.08;
-    }
+    autoAngle += 0.006;
+    floatT     += 0.012;
+    tooth.rotation.y += ((autoAngle + mouseX * 0.35) - tooth.rotation.y) * 0.04;
+    tooth.rotation.x += ((-0.08 + mouseY * 0.18)    - tooth.rotation.x) * 0.04;
+    tooth.position.y  = Math.sin(floatT) * 0.08;
 
     renderer.render(scene, camera);
   }
@@ -132,6 +128,7 @@
 
   /* ── Resize ───────────────────────────────────────────── */
   window.addEventListener('resize', function () {
+    if (window.innerWidth <= 768) return;
     var s = stageSize();
     if (!s.w || !s.h) return;
     camera.aspect = s.w / s.h;
