@@ -65,7 +65,7 @@
     .from('.hero-desc',     { opacity: 0, y: 20, duration: 0.7, ease: 'power2.out' }, '-=0.5')
     .from('.hero-actions',  { opacity: 0, y: 20, duration: 0.6, ease: 'power2.out' }, '-=0.4')
     .from('.hero-chips',    { opacity: 0, y: 16, duration: 0.5, ease: 'power2.out' }, '-=0.35')
-    .from('.tooth-stage',   { opacity: 0, scale: 0.82, duration: 1.1, ease: 'elastic.out(1, 0.75)' }, '-=0.9')
+    .from('.tooth-stage',   { opacity: 0, scale: 0.88, duration: 0.9, ease: 'power3.out' }, '-=0.9')
     .from('.tooth-badge',   { opacity: 0, scale: 0.75, stagger: 0.18, duration: 0.55, ease: 'back.out(1.8)' }, '-=0.6')
     .from('.scroll-hint',   { opacity: 0, duration: 0.6 }, '-=0.2');
 
