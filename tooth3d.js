@@ -1,12 +1,15 @@
 (function () {
   'use strict';
 
-  /* Skip entirely on mobile — SVG fallback handles it */
+  /* Skip on mobile — SVG handles it */
   if (window.innerWidth <= 768) return;
 
-  var canvas  = document.getElementById('tooth-canvas');
-  var svgTooth = document.getElementById('tooth-svg');
+  var canvas   = document.getElementById('tooth-canvas');
+  var stage    = canvas && canvas.parentElement;
   if (!canvas || typeof THREE === 'undefined') return;
+
+  /* Mark stage as loading — triggers stronger glow pulse */
+  if (stage) stage.classList.add('tooth-stage--loading');
 
   /* ── Renderer ─────────────────────────────────────────── */
   var renderer;
@@ -18,7 +21,8 @@
       powerPreference: 'high-performance',
     });
   } catch (e) {
-    return; /* WebGL unavailable — SVG remains visible */
+    if (stage) stage.classList.remove('tooth-stage--loading');
+    return;
   }
 
   renderer.setClearColor(0x000000, 0);
@@ -31,10 +35,9 @@
   var scene = new THREE.Scene();
 
   function stageSize() {
-    var p = canvas.parentElement;
     return {
-      w: p ? (p.clientWidth  || 340) : 340,
-      h: p ? (p.clientHeight || 400) : 400,
+      w: stage ? (stage.clientWidth  || 340) : 340,
+      h: stage ? (stage.clientHeight || 400) : 400,
     };
   }
 
@@ -46,11 +49,11 @@
 
   /* ── Lighting ─────────────────────────────────────────── */
   scene.add(new THREE.AmbientLight(0xfff8f0, 0.55));
-  var key = new THREE.DirectionalLight(0xffffff, 2.2);
-  key.position.set(3, 5, 4); scene.add(key);
+  var key  = new THREE.DirectionalLight(0xffffff, 2.2);
+  key.position.set(3, 5, 4);  scene.add(key);
   var fill = new THREE.DirectionalLight(0xc9a96e, 0.55);
   fill.position.set(-4, 2, 2); scene.add(fill);
-  var rim = new THREE.DirectionalLight(0x9ecbff, 0.4);
+  var rim  = new THREE.DirectionalLight(0x9ecbff, 0.4);
   rim.position.set(0, -3, -4); scene.add(rim);
 
   /* ── Enamel material ──────────────────────────────────── */
@@ -80,17 +83,14 @@
       tooth.rotation.x = -0.08;
       scene.add(tooth);
 
-      /* Swap: fade in canvas, fade out SVG */
+      /* Stop loading state, fade canvas in */
+      if (stage) stage.classList.remove('tooth-stage--loading');
       canvas.style.opacity = '1';
-      if (svgTooth) { svgTooth.style.transition = 'opacity .5s'; svgTooth.style.opacity = '0'; }
-
-      var loaderEl = document.getElementById('tooth-loader');
-      if (loaderEl) loaderEl.style.opacity = '0';
     },
     undefined,
     function () {
-      var loaderEl = document.getElementById('tooth-loader');
-      if (loaderEl) loaderEl.style.display = 'none';
+      /* On error: silently stop — glow remains, no broken state */
+      if (stage) stage.classList.remove('tooth-stage--loading');
     }
   );
 
@@ -101,12 +101,12 @@
     mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
   });
 
-  /* ── Pause when hero is off-screen ────────────────────── */
+  /* ── Pause render when hero off-screen ────────────────── */
   var visible = true;
   if (typeof IntersectionObserver !== 'undefined') {
     new IntersectionObserver(function (entries) {
       visible = entries[0].isIntersecting;
-    }, { threshold: 0 }).observe(canvas.parentElement || canvas);
+    }, { threshold: 0 }).observe(stage || canvas);
   }
 
   var autoAngle = 0, floatT = 0;

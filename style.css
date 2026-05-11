@@ -398,8 +398,18 @@ img { display: block; max-width: 100%; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: opacity .6s ease;
+}
+/* Stronger pulse while 3D model is still loading */
+.tooth-stage--loading .tooth-glow {
+  animation: glow-load-pulse 2s ease-in-out infinite;
+}
+@keyframes glow-load-pulse {
+  0%,100% { opacity: .6; transform: translate(-50%,-50%) scale(1); }
+  50%      { opacity: 1;  transform: translate(-50%,-50%) scale(1.12); }
 }
 
+/* SVG tooth: mobile-only — hidden on desktop where 3D takes over */
 .tooth-main {
   width: 220px;
   filter: drop-shadow(0 20px 60px rgba(201,169,110,.2)) drop-shadow(0 4px 16px rgba(0,0,0,.4));
@@ -407,6 +417,7 @@ img { display: block; max-width: 100%; }
   position: relative;
   z-index: 2;
 }
+.tooth-mobile-only { display: none; }
 
 .tooth-canvas {
   width: 100%;
@@ -421,30 +432,6 @@ img { display: block; max-width: 100%; }
   transition: opacity .5s ease;
 }
 
-/* Loading spinner */
-.tooth-loader {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 5;
-  pointer-events: none;
-  transition: opacity .6s ease;
-}
-
-.tooth-loader-ring {
-  width: 44px;
-  height: 44px;
-  border: 2.5px solid rgba(201,169,110,.18);
-  border-top-color: var(--gold);
-  border-radius: 50%;
-  animation: spin-ring 0.9s linear infinite;
-}
-
-@keyframes spin-ring {
-  to { transform: rotate(360deg); }
-}
 
 /* Floating badges */
 .tooth-badge {
@@ -959,6 +946,6 @@ img { display: block; max-width: 100%; }
 
 /* No WebGL on mobile — hide canvas, show SVG */
 @media (max-width: 768px) {
-  .tooth-canvas, #tooth-loader { display: none !important; }
-  .tooth-main { display: block !important; opacity: 1 !important; }
+  .tooth-canvas { display: none !important; }
+  .tooth-mobile-only { display: block !important; opacity: 1 !important; }
 }
