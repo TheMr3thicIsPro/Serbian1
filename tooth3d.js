@@ -4,8 +4,8 @@
   /* Skip on mobile — SVG handles it */
   if (window.innerWidth <= 768) return;
 
-  var canvas   = document.getElementById('tooth-canvas');
-  var stage    = canvas && canvas.parentElement;
+  var canvas = document.getElementById('tooth-canvas');
+  var stage  = canvas && canvas.parentElement;
   if (!canvas || typeof THREE === 'undefined') return;
 
   /* Mark stage as loading — triggers stronger glow pulse */
@@ -83,7 +83,6 @@
       tooth.rotation.x = -0.08;
       scene.add(tooth);
 
-      /* Stop loading state, fade canvas in */
       if (stage) stage.classList.remove('tooth-stage--loading');
       canvas.style.opacity = '1';
     },

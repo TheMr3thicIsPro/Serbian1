@@ -409,15 +409,6 @@ img { display: block; max-width: 100%; }
   50%      { opacity: 1;  transform: translate(-50%,-50%) scale(1.12); }
 }
 
-/* SVG tooth: mobile-only — hidden on desktop where 3D takes over */
-.tooth-main {
-  width: 220px;
-  filter: drop-shadow(0 20px 60px rgba(201,169,110,.2)) drop-shadow(0 4px 16px rgba(0,0,0,.4));
-  animation: float-tooth 6s ease-in-out infinite;
-  position: relative;
-  z-index: 2;
-}
-.tooth-mobile-only { display: none; }
 
 .tooth-canvas {
   width: 100%;
@@ -941,11 +932,9 @@ img { display: block; max-width: 100%; }
   .form-row.two-col { flex-direction: column; }
   .footer-cols { grid-template-columns: 1fr; }
   .tooth-stage { width: 260px; height: 320px; }
-  .tooth-main  { width: 180px; }
 }
 
-/* No WebGL on mobile — hide canvas, show SVG */
+/* No WebGL on mobile — canvas hidden, glow/badges remain */
 @media (max-width: 768px) {
   .tooth-canvas { display: none !important; }
-  .tooth-mobile-only { display: block !important; opacity: 1 !important; }
 }
