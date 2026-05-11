@@ -3,28 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Стоматолошка ординација Жугић — Beograd. Profesionalna stomatološka nega u samom srcu Beograda. Zakazivanje pregleda na Generala Rajevskog 1." />
-  <title>Стоматолошка ординација Жугић — Beograd</title>
+  <meta name="description" content="Стоматолошка ординација Жугић — Generala Rajevskog 1, Beograd. Profesionalna stomatološka nega, bezbolni tretmani, 20+ godina iskustva." />
+  <title>Жугић · Стоматолошка ординација · Beograd</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- ── HEADER ─────────────────────────────────────────── -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="#" class="logo" aria-label="Стоматолошка ординација Жугић — naslovna">
-        <span class="logo-name">Жугић</span>
-        <span class="logo-sub">Стоматолошка ординација</span>
+      <a href="#" class="logo">
+        <svg class="logo-tooth" viewBox="0 0 28 36" fill="none" aria-hidden="true">
+          <path d="M14 1C10 1 6 3.5 4 7C2 10.5 2 14.5 3 18C4 20 5 22 5.5 24.5C6 27 6 29 7 31C7.5 32.5 9 34 10.5 33.5C12 33 12.5 31 13 29C13.3 27.5 13.7 26 14 26C14.3 26 14.7 27.5 15 29C15.5 31 16 33 17.5 33.5C19 34 20.5 32.5 21 31C22 29 22 27 22.5 24.5C23 22 24 20 25 18C26 14.5 26 10.5 24 7C22 3.5 18 1 14 1Z" fill="currentColor"/>
+        </svg>
+        <span class="logo-text">
+          <span class="logo-name">Жугић</span>
+          <span class="logo-sub">Стоматолошка ординација</span>
+        </span>
       </a>
       <nav class="main-nav" aria-label="Glavna navigacija">
         <ul>
           <li><a href="#o-nama">O nama</a></li>
           <li><a href="#usluge">Usluge</a></li>
+          <li><a href="#tim">Tim</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
-          <li><a href="tel:+381117839034" class="nav-cta">Zakažite pregled</a></li>
+          <li><a href="tel:+381117839034" class="nav-cta">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3.33 3.33h3.34l1.66 4.17-2.08 1.25c.96 1.93 2.47 3.44 4.17 4.17l1.25-2.08 4.17 1.66v3.33A1.67 1.67 0 0115 17.5C7.99 17.5 2.5 12.01 2.5 5a1.67 1.67 0 01.83-1.67z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+            011 783 9034
+          </a></li>
         </ul>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Otvori meni" aria-expanded="false">
@@ -35,311 +46,465 @@
       <ul>
         <li><a href="#o-nama">O nama</a></li>
         <li><a href="#usluge">Usluge</a></li>
+        <li><a href="#tim">Tim</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
-        <li><a href="tel:+381117839034" class="nav-cta">Zakažite pregled</a></li>
+        <li><a href="tel:+381117839034" class="nav-cta">011 783 9034</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
 
-    <!-- Hero -->
+    <!-- ── HERO ───────────────────────────────────────────── -->
     <section class="hero" id="pocetna">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hero-shape hero-shape-1"></div>
-        <div class="hero-shape hero-shape-2"></div>
+
+      <!-- Background layers -->
+      <div class="hero-canvas" aria-hidden="true">
+        <div class="hero-grid"></div>
+        <div class="hero-glow"></div>
+        <!-- Floating particles -->
+        <div class="particle" style="--x:12%;--y:18%;--size:4px;--delay:0s;--dur:7s"></div>
+        <div class="particle" style="--x:78%;--y:72%;--size:3px;--delay:1.2s;--dur:8s"></div>
+        <div class="particle" style="--x:25%;--y:65%;--size:5px;--delay:2.4s;--dur:6s"></div>
+        <div class="particle" style="--x:88%;--y:28%;--size:3px;--delay:0.8s;--dur:9s"></div>
+        <div class="particle" style="--x:55%;--y:85%;--size:4px;--delay:3s;--dur:7.5s"></div>
+        <div class="particle" style="--x:6%;--y:48%;--size:3px;--delay:1.8s;--dur:8.5s"></div>
+        <!-- Small floating tooth silhouettes -->
+        <div class="bg-tooth" style="--x:8%;--y:30%;--scale:0.6;--delay:0s;--dur:12s;--rot:-20deg"></div>
+        <div class="bg-tooth" style="--x:85%;--y:62%;--scale:0.4;--delay:4s;--dur:14s;--rot:15deg"></div>
+        <div class="bg-tooth" style="--x:62%;--y:15%;--scale:0.5;--delay:2s;--dur:11s;--rot:30deg"></div>
       </div>
+
       <div class="container hero-inner">
+
+        <!-- Left: copy -->
         <div class="hero-content">
-          <p class="hero-eyebrow">Generala Rajevskog 1 · Beograd</p>
+          <p class="hero-eyebrow">
+            <span class="eyebrow-dot"></span>
+            Generala Rajevskog 1 · Vračar, Beograd
+          </p>
           <h1 class="hero-title">
-            Vaš osmeh<br />
-            <em>u pravim rukama</em>
+            Vaš osmeh,<br>
+            <em>naša strast</em>
           </h1>
           <p class="hero-desc">
-            Višedecenijsko iskustvo, savremena oprema i individualan pristup svakom pacijentu — to je osnova naše ordinacije u centru Beograda.
+            Više od dve decenije posvećeni jednom cilju — da svaki pacijent izađe sa osmehom na licu. Savremena oprema, bezbolni tretmani, tim koji vam zaista sluša.
           </p>
           <div class="hero-actions">
-            <a href="#kontakt" class="btn btn-primary">Zakažite pregled</a>
-            <a href="#usluge" class="btn btn-ghost">Pogledajte usluge</a>
-          </div>
-        </div>
-        <div class="hero-card" aria-hidden="true">
-          <div class="hero-card-inner">
-            <div class="hc-icon">
-              <svg width="38" height="38" viewBox="0 0 38 38" fill="none" aria-hidden="true">
-                <path d="M19 3C13.477 3 9 7.477 9 13c0 5 3.5 9.5 7 13.5.5.6 1 1.2 1.5 1.8.5.6.5 1.2 1 2h1c.5-.8.5-1.4 1-2 .5-.6 1-1.2 1.5-1.8C25.5 22.5 29 18 29 13c0-5.523-4.477-10-10-10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                <path d="M15 13c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M16 31.5h6M16.5 34.5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <a href="#kontakt" class="btn btn-gold">Zakažite pregled</a>
+            <a href="tel:+381117839034" class="btn btn-outline-light">
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M3.33 3.33h3.34l1.66 4.17-2.08 1.25c.96 1.93 2.47 3.44 4.17 4.17l1.25-2.08 4.17 1.66v3.33A1.67 1.67 0 0115 17.5C7.99 17.5 2.5 12.01 2.5 5a1.67 1.67 0 01.83-1.67z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
               </svg>
+              011 783 9034
+            </a>
+          </div>
+          <ul class="hero-chips" aria-label="Ključne prednosti">
+            <li><span class="chip-check" aria-hidden="true">✓</span> Bezbolni tretmani</li>
+            <li><span class="chip-check" aria-hidden="true">✓</span> 20+ godina iskustva</li>
+            <li><span class="chip-check" aria-hidden="true">✓</span> Fleksibilni termini</li>
+          </ul>
+        </div>
+
+        <!-- Right: tooth illustration -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="tooth-stage">
+            <!-- Glow orb behind tooth -->
+            <div class="tooth-glow"></div>
+
+            <!-- The tooth -->
+            <svg class="tooth-main" viewBox="0 0 200 255" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Crown -->
+              <path d="M100 8 C80 8 55 18 40 40 C28 58 25 82 28 108 C32 120 45 132 100 134 C155 132 168 120 172 108 C175 82 172 58 160 40 C145 18 120 8 100 8 Z"
+                fill="rgba(255,255,255,0.94)" stroke="rgba(201,169,110,0.45)" stroke-width="1.5"/>
+              <!-- Left root -->
+              <path d="M56 128 C51 148 48 172 50 196 C51 211 61 219 72 215 C83 211 87 199 86 184 C85 168 83 148 81 130 Z"
+                fill="rgba(255,255,255,0.94)" stroke="rgba(201,169,110,0.45)" stroke-width="1.5"/>
+              <!-- Right root -->
+              <path d="M91 130 C89 148 87 168 86 184 C85 199 89 211 100 215 C111 219 121 211 122 196 C124 172 121 148 116 128 Z"
+                fill="rgba(255,255,255,0.94)" stroke="rgba(201,169,110,0.45)" stroke-width="1.5"/>
+              <!-- Trunk bridge -->
+              <path d="M81 128 L91 128 L94 148 L78 148 Z" fill="rgba(255,255,255,0.94)"/>
+              <!-- Enamel shine -->
+              <path d="M54 50 C51 66 49 84 51 102" stroke="rgba(255,255,255,0.55)" stroke-width="5" stroke-linecap="round"/>
+              <!-- Cusp groove detail -->
+              <path d="M70 28 C82 20 100 16 118 22" stroke="rgba(201,169,110,0.35)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <!-- Internal dentin hint -->
+              <path d="M70 65 C67 82 66 100 68 118" stroke="rgba(201,169,110,0.2)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <!-- Sparkle large -->
+              <line x1="176" y1="18" x2="176" y2="32" stroke="#c9a96e" stroke-width="2" stroke-linecap="round"/>
+              <line x1="169" y1="25" x2="183" y2="25" stroke="#c9a96e" stroke-width="2" stroke-linecap="round"/>
+              <line x1="172" y1="19" x2="180" y2="31" stroke="#c9a96e" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+              <!-- Sparkle small -->
+              <line x1="22" y1="152" x2="22" y2="160" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+              <line x1="18" y1="156" x2="26" y2="156" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+            </svg>
+
+            <!-- Floating info badges -->
+            <div class="tooth-badge badge-top">
+              <div class="badge-icon-wrap">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#2d6a4f" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4-5" stroke="#2d6a4f" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span>Bezbolni tretmani</span>
             </div>
-            <ul class="hc-list">
-              <li>
-                <span class="hc-check" aria-hidden="true">✓</span>
-                <span>Bezbolni tretmani</span>
-              </li>
-              <li>
-                <span class="hc-check" aria-hidden="true">✓</span>
-                <span>Savremena digitalna dijagnostika</span>
-              </li>
-              <li>
-                <span class="hc-check" aria-hidden="true">✓</span>
-                <span>Fleksibilni termini</span>
-              </li>
-              <li>
-                <span class="hc-check" aria-hidden="true">✓</span>
-                <span>Individualan pristup</span>
-              </li>
-            </ul>
+
+            <div class="tooth-badge badge-bottom">
+              <div class="badge-stat">20<span>+</span></div>
+              <div class="badge-label-wrap">
+                <span class="badge-label-main">godina</span>
+                <span class="badge-label-sub">iskustva</span>
+              </div>
+            </div>
+
+            <!-- Small orbit dots -->
+            <div class="orbit-dot od-1"></div>
+            <div class="orbit-dot od-2"></div>
+            <div class="orbit-dot od-3"></div>
           </div>
         </div>
+
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-hint" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
       </div>
     </section>
 
-    <!-- About -->
+    <!-- ── TRUST BAR ────────────────────────────────────── -->
+    <div class="trust-bar">
+      <div class="container trust-inner">
+        <div class="trust-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          <div><strong>Bezbolno</strong><span>Savremena anestezija</span></div>
+        </div>
+        <div class="trust-sep" aria-hidden="true"></div>
+        <div class="trust-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <div><strong>Pon–Pet: 12–19h</strong><span>Fleksibilni termini</span></div>
+        </div>
+        <div class="trust-sep" aria-hidden="true"></div>
+        <div class="trust-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <div><strong>Tim stručnjaka</strong><span>3 specijaliste</span></div>
+        </div>
+        <div class="trust-sep" aria-hidden="true"></div>
+        <div class="trust-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <div><strong>Gen. Rajevskog 1</strong><span>Vračar, Beograd</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ABOUT ────────────────────────────────────────── -->
     <section class="about" id="o-nama">
       <div class="container about-inner">
-        <div class="about-text">
+        <div class="about-text fade-up">
           <p class="section-eyebrow">O nama</p>
-          <h2 class="section-title">Stomatologija<br />koja gradi poverenje</h2>
+          <h2 class="section-title">Stomatologija<br>koja gradi<br>poverenje</h2>
           <p>
-            Стоматолошка ординација Жугић nalazi se u centru Beograda, na adresi Generala Rajevskog 1, u opštini Vračar. Na čelu ordinacije je <strong>dr Tanja Žugić</strong>, koja zajedno sa timom stručnjaka — uključujući specijaliste oralne hirurgije i dečje stomatologije — pruža potpunu stomatološku zaštitu pacijentima svih uzrasta.
+            Стоматолошка ординација Жугић smeštena je u srcu Vračara — jednog od najprestižnijih beogradskih naselja. Na čelu ordinacije stoji <strong>dr Tanja Žugić</strong>, uz tim iskusnih specijalista oralne hirurgije i dečje stomatologije.
           </p>
           <p>
-            Radimo sa savremenom opremom, digitalnom dijagnostikom i visokokvalitetnim uvoznim materijalima. Ono što nas zaista izdvaja je vreme i pažnja koje posvećujemo svakom pacijentu — bez žurbe, bez kompromisa. Poštujemo vaše vreme i šaljemo podsetnike za svaki zakazani termin.
+            Koristimo digitalnu dijagnostiku, savremene instrumente i visokokvalitetne uvozne materijale koji zadovoljavaju EU standarde. Ali ono što nas zapravo izdvaja — jeste vreme i pažnja posvećena svakom pacijentu, ponaosob.
           </p>
-          <a href="#kontakt" class="btn btn-primary" style="margin-top: 2rem; display: inline-block;">Kontaktirajte nas</a>
+          <a href="#kontakt" class="btn btn-navy" style="margin-top:1.75rem">Zakažite pregled →</a>
         </div>
-        <div class="about-pillars">
+        <div class="about-pillars stagger-fade">
           <div class="pillar">
             <div class="pillar-num">01</div>
             <h3>Iskustvo</h3>
-            <p>Višegodišnja praksa i stotine zadovoljnih pacijenata koji nam se vraćaju.</p>
+            <p>Više od dvadeset godina prakse i stotine pacijenata koji nam se s poverenjem vraćaju.</p>
           </div>
           <div class="pillar">
             <div class="pillar-num">02</div>
             <h3>Oprema</h3>
-            <p>Digitalni rendgeni, savremeni instrumenti i materijali koji ispunjavaju EU standarde.</p>
+            <p>Digitalni rendgeni, savremeni instrumenti i materijali — sve po EU standardima.</p>
           </div>
           <div class="pillar">
             <div class="pillar-num">03</div>
             <h3>Poverenje</h3>
-            <p>Transparentna komunikacija, jasne cene i plan terapije pre svakog tretmana.</p>
+            <p>Transparentna komunikacija, jasne cene i individualan plan terapije pre svakog zahvata.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services -->
+    <!-- ── SERVICES ─────────────────────────────────────── -->
     <section class="services" id="usluge">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header fade-up">
           <p class="section-eyebrow">Usluge</p>
           <h2 class="section-title">Šta nudimo</h2>
-          <p class="section-intro">Potpuna stomatološka zaštita — od preventivnih pregleda do estetske stomatologije — sve na jednom mestu.</p>
+          <p class="section-intro">Potpuna stomatološka zaštita — od preventivnog pregleda do implantologije — sve na jednoj adresi.</p>
         </div>
-        <div class="services-grid">
+        <div class="services-grid stagger-grid">
 
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <circle cx="14" cy="14" r="11" stroke="currentColor" stroke-width="1.4"/>
-                <path d="M9 14l3.5 3.5L19 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+            <div class="sc-num" aria-hidden="true">01</div>
+            <div class="sc-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="11" stroke="currentColor" stroke-width="1.4"/><path d="M9 14l3.5 3.5L19 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3>Preventivni pregledi</h3>
-            <p>Redovni kontrolni pregledi, profesionalno čišćenje kamenca i saveti za pravilnu higijenu.</p>
+            <p>Redovni kontrolni pregledi, profesionalno čišćenje kamenca i saveti za pravilnu higijenu zuba.</p>
           </article>
 
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <rect x="5" y="7" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.4"/>
-                <path d="M9 12h10M9 16h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              </svg>
+            <div class="sc-num" aria-hidden="true">02</div>
+            <div class="sc-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><rect x="5" y="7" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.4"/><path d="M9 12h10M9 16h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
             </div>
             <h3>Konzervativna stomatologija</h3>
-            <p>Lečenje karijesa, ispuni (bele i kompozitne plombe) i restauracija zuba.</p>
+            <p>Lečenje karijesa, bele i kompozitne plombe, restauracija zuba savremenim materijalima.</p>
           </article>
 
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path d="M14 4c-4.418 0-8 3.134-8 7 0 3.5 2.5 6.5 5 9 .4.4.8.9 1.2 1.4.4.5.4 1 .8 1.6h2c.4-.6.4-1.1.8-1.6.4-.5.8-1 1.2-1.4 2.5-2.5 5-5.5 5-9 0-3.866-3.582-7-8-7z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-              </svg>
+            <div class="sc-num" aria-hidden="true">03</div>
+            <div class="sc-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><path d="M14 4c-4.418 0-8 3.134-8 7 0 3.5 2.5 6.5 5 9 .4.4.8.9 1.2 1.4.4.5.4 1 .8 1.6h2c.4-.6.4-1.1.8-1.6.4-.5.8-1 1.2-1.4 2.5-2.5 5-5.5 5-9 0-3.866-3.582-7-8-7z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
             </div>
             <h3>Estetska stomatologija</h3>
-            <p>Beljenje zuba, keramičke ljuspice (veneeri) i estetska korekcija osmeha.</p>
+            <p>Beljenje zuba, keramičke ljuspice (veneeri) i estetska korekcija osmeha po vašoj meri.</p>
           </article>
 
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path d="M7 10l7-4 7 4v8l-7 4-7-4v-8z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-                <path d="M14 6v16M7 10l7 4 7-4" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-              </svg>
+            <div class="sc-num" aria-hidden="true">04</div>
+            <div class="sc-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><path d="M7 10l7-4 7 4v8l-7 4-7-4v-8z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M14 6v16M7 10l7 4 7-4" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
             </div>
             <h3>Protetika</h3>
-            <p>Fiksne i mobilne proteze, keramičke krunice i mostovi izrađeni od vrhunskih materijala.</p>
+            <p>Fiksne i mobilne proteze, keramičke krunice i mostovi od vrhunskih certifikovanih materijala.</p>
           </article>
 
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path d="M8 20 L14 8 L20 20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 16h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              </svg>
+            <div class="sc-num" aria-hidden="true">05</div>
+            <div class="sc-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><path d="M8 20L14 8l6 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 16h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
             </div>
             <h3>Implantologija</h3>
-            <p>Ugradnja dentalnih implantata — trajno rešenje za nedostajuće zube.</p>
+            <p>Ugradnja dentalnih implantata — trajno i estetski savršeno rešenje za nedostajuće zube.</p>
           </article>
 
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path d="M9 14c0-2.761 2.239-5 5-5s5 2.239 5 5-2.239 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-                <path d="M6 14H4M24 14h-2M14 6V4M14 24v-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              </svg>
+            <div class="sc-num" aria-hidden="true">06</div>
+            <div class="sc-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><path d="M9 14c0-2.761 2.239-5 5-5s5 2.239 5 5-2.239 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M6 14H4M24 14h-2M14 6V4M14 24v-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
             </div>
             <h3>Oralna hirurgija</h3>
-            <p>Vađenje zuba, ekstrakcija umnjaka i manje hirurške intervencije u lokalnoj anesteziji.</p>
+            <p>Vađenje zuba, ekstrakcija umnjaka i hirurške intervencije — bezbolno, u lokalnoj anesteziji.</p>
           </article>
 
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path d="M14 4L4 10v14h20V10L14 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-                <path d="M10 24V16h8v8" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-              </svg>
+            <div class="sc-num" aria-hidden="true">07</div>
+            <div class="sc-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><path d="M14 4L4 10v14h20V10L14 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 24V16h8v8" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
             </div>
             <h3>Parodontologija</h3>
-            <p>Lečenje bolesti desni, dubinsko čišćenje i terapija parodontopatije.</p>
+            <p>Lečenje bolesti desni, dubinsko čišćenje i kompleksna terapija parodontopatije.</p>
           </article>
 
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <circle cx="14" cy="10" r="5" stroke="currentColor" stroke-width="1.4"/>
-                <path d="M6 24c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              </svg>
+            <div class="sc-num" aria-hidden="true">08</div>
+            <div class="sc-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="5" stroke="currentColor" stroke-width="1.4"/><path d="M6 24c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
             </div>
             <h3>Dečja stomatologija</h3>
-            <p>Bezbolni i prijatni pregledi za decu — mlečni zubi, pečatiranje fisura i fluoridizacija.</p>
+            <p>Prijatni, bezbolni pregledi za decu svih uzrasta — mlečni zubi, pečatiranje fisura i fluoridizacija.</p>
           </article>
 
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path d="M14 5v18M9 10l5-5 5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M7 23h14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              </svg>
+            <div class="sc-num" aria-hidden="true">09</div>
+            <div class="sc-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><path d="M14 5v18M9 10l5-5 5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 23h14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
             </div>
             <h3>Endodoncija</h3>
-            <p>Lečenje kanala korena zuba savremenim tehnikama — bezbolno i dugotrajno.</p>
+            <p>Lečenje kanala korena zuba savremenim tehnikama — efikasno, bezbolno i dugotrajno.</p>
           </article>
 
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path d="M7 8c0-3.866 3.134-5 7-5s7 1.134 7 5c0 2-1 3.5-2.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-                <path d="M8 20c1-3 2.5-5 6-5s5 2 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-                <path d="M6 24h16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              </svg>
+            <div class="sc-num" aria-hidden="true">10</div>
+            <div class="sc-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><path d="M7 8c0-3.866 3.134-5 7-5s7 1.134 7 5c0 2-1 3.5-2.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M8 20c1-3 2.5-5 6-5s5 2 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M6 24h16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
             </div>
             <h3>Ortodoncija</h3>
             <p>Fiksni aparati i mobilne naprave za decu i odrasle — korekcija položaja zuba i vilice.</p>
           </article>
 
+          <article class="service-card">
+            <div class="sc-num" aria-hidden="true">11</div>
+            <div class="sc-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><path d="M9 3h10l2 4H7L9 3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><rect x="4" y="7" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M10 14h8M10 18h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Digitalna dijagnostika</h3>
+            <p>Digitalni rendgeni i savremena stomatološka dijagnostika — precizno, brzo, bez viška zračenja.</p>
+          </article>
+
+          <article class="service-card service-card--cta">
+            <div class="sc-cta-inner">
+              <p>Ne vidite uslugu?</p>
+              <h3>Kontaktirajte nas</h3>
+              <a href="#kontakt" class="btn btn-navy btn-sm">Pitajte nas →</a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- Why us strip -->
-    <section class="why-us">
-      <div class="container why-inner">
-        <div class="why-text">
-          <p class="section-eyebrow" style="color: #c9a96e;">Zašto mi</p>
-          <h2 class="section-title" style="color: #f8f6f2;">Pacijent pre svega</h2>
-          <p style="color: rgba(248,246,242,0.75);">
-            Naš cilj nije samo lečenje — već izgradnja dugoročnog odnosa zasnovanog na poverenju, znanju i iskrenoj brizi. Svaki pacijent dobija individualan tretman i jasno objašnjenje svakog koraka.
-          </p>
+    <!-- ── STATS STRIP ───────────────────────────────────── -->
+    <section class="stats-strip">
+      <div class="container stats-inner stagger-grid">
+        <div class="stat-block">
+          <span class="stat-num" data-target="20" data-suffix="+">20+</span>
+          <span class="stat-label">Godina iskustva</span>
         </div>
-        <div class="why-stats">
-          <div class="stat">
-            <span class="stat-num">20+</span>
-            <span class="stat-label">Godina iskustva</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">8</span>
-            <span class="stat-label">Stomatoloških usluga</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">100%</span>
-            <span class="stat-label">Posvećenost pacijentu</span>
-          </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat-block">
+          <span class="stat-num" data-target="11" data-suffix="">11</span>
+          <span class="stat-label">Stomatoloških usluga</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat-block">
+          <span class="stat-num" data-target="3" data-suffix="">3</span>
+          <span class="stat-label">Stručnjaka u timu</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat-block">
+          <span class="stat-num" data-target="100" data-suffix="%">100%</span>
+          <span class="stat-label">Posvećenost pacijentu</span>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- ── TEAM ─────────────────────────────────────────── -->
+    <section class="team" id="tim">
+      <div class="container">
+        <div class="section-header fade-up">
+          <p class="section-eyebrow">Tim</p>
+          <h2 class="section-title">Upoznajte nas</h2>
+          <p class="section-intro">Iskusni stručnjaci koji su posvećeni vašem zdravlju i osmehu.</p>
+        </div>
+        <div class="team-grid stagger-grid">
+
+          <article class="team-card team-card--featured">
+            <div class="tc-avatar" aria-hidden="true">
+              <div class="tc-avatar-inner">
+                <svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="40" cy="30" r="20" fill="rgba(201,169,110,0.15)" stroke="rgba(201,169,110,0.4)" stroke-width="1.2"/>
+                  <path d="M10 85 C10 65 22 52 40 52 C58 52 70 65 70 85" fill="rgba(201,169,110,0.1)" stroke="rgba(201,169,110,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                  <circle cx="40" cy="29" r="10" fill="rgba(201,169,110,0.25)"/>
+                </svg>
+              </div>
+              <div class="tc-badge tc-badge--primary">Osnivač</div>
+            </div>
+            <div class="tc-info">
+              <h3>Dr. Tanja Žugić</h3>
+              <p class="tc-title">Opšta stomatologija · Vlasnik ordinacije</p>
+              <p class="tc-bio">Osnivač i dugogodišnji rukovodilac ordinacije. Specijalista opšte stomatologije sa višedecenijskim iskustvom i predanom brigom o svakom pacijentu.</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="tc-avatar" aria-hidden="true">
+              <div class="tc-avatar-inner">
+                <svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="40" cy="30" r="20" fill="rgba(27,45,69,0.1)" stroke="rgba(27,45,69,0.3)" stroke-width="1.2"/>
+                  <path d="M10 85 C10 65 22 52 40 52 C58 52 70 65 70 85" fill="rgba(27,45,69,0.08)" stroke="rgba(27,45,69,0.3)" stroke-width="1.2" stroke-linecap="round"/>
+                  <circle cx="40" cy="29" r="10" fill="rgba(27,45,69,0.12)"/>
+                </svg>
+              </div>
+            </div>
+            <div class="tc-info">
+              <h3>Doc. dr sci. spec.<br>Dejan Ćetković</h3>
+              <p class="tc-title">Specijalista oralne hirurgije</p>
+              <p class="tc-bio">Docent i doktor nauka, specijalista oralne hirurgije. Konsultant za hirurške zahvate — ekstrakcije, implantati i kompleksne oralne intervencije.</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="tc-avatar" aria-hidden="true">
+              <div class="tc-avatar-inner">
+                <svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="40" cy="30" r="20" fill="rgba(27,45,69,0.1)" stroke="rgba(27,45,69,0.3)" stroke-width="1.2"/>
+                  <path d="M10 85 C10 65 22 52 40 52 C58 52 70 65 70 85" fill="rgba(27,45,69,0.08)" stroke="rgba(27,45,69,0.3)" stroke-width="1.2" stroke-linecap="round"/>
+                  <circle cx="40" cy="29" r="10" fill="rgba(27,45,69,0.12)"/>
+                </svg>
+              </div>
+              <div class="tc-langs">
+                <span>EN</span><span>DE</span>
+              </div>
+            </div>
+            <div class="tc-info">
+              <h3>Dr. Danijela Dejanac</h3>
+              <p class="tc-title">Dečja stomatologija</p>
+              <p class="tc-bio">Diplomirala na Stomatološkom fakultetu u Beogradu 2008. U ordinaciji od 2014, specijalizovana za dečju stomatologiju. Govori engleski i nemački.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ───────────────────────────────────────── -->
     <section class="contact" id="kontakt">
       <div class="container contact-inner">
-        <div class="contact-info">
+
+        <div class="contact-info fade-up">
           <p class="section-eyebrow">Kontakt</p>
-          <h2 class="section-title">Zakažite pregled</h2>
-          <p class="contact-intro">Slobodno nas pozovite, pošaljite poruku ili posetite ordinaciju — uvek ste dobrodošli.</p>
+          <h2 class="section-title">Zakažite<br>pregled</h2>
+          <p class="contact-intro">Slobodno nas pozovite ili pošaljite poruku. Odgovaramo u roku od jednog radnog dana.</p>
 
           <ul class="contact-list">
             <li>
-              <div class="contact-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M10 1.667A6.667 6.667 0 0 0 3.333 8.334c0 4.583 6.667 10 6.667 10s6.667-5.417 6.667-10A6.667 6.667 0 0 0 10 1.667z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
-                  <circle cx="10" cy="8.334" r="2.083" stroke="currentColor" stroke-width="1.3"/>
-                </svg>
+              <div class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 1.667A6.667 6.667 0 003.333 8.334c0 4.583 6.667 10 6.667 10s6.667-5.417 6.667-10A6.667 6.667 0 0010 1.667z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><circle cx="10" cy="8.334" r="2.083" stroke="currentColor" stroke-width="1.3"/></svg>
               </div>
               <div>
                 <span class="contact-label">Adresa</span>
-                <a href="https://maps.google.com/?q=Generala+Rajevskog+1,+Beograd" target="_blank" rel="noopener" class="contact-value">Generala Rajevskog 1, Beograd</a>
+                <a href="https://maps.google.com/?q=Generala+Rajevskog+1,+Beograd" target="_blank" rel="noopener" class="contact-value">Generala Rajevskog 1, Vračar<br>Beograd, Srbija</a>
               </div>
             </li>
             <li>
-              <div class="contact-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M3.333 3.333h3.334l1.666 4.167-2.083 1.25c.961 1.93 2.47 3.439 4.167 4.167l1.25-2.084L16.667 12.5v3.333A1.667 1.667 0 0 1 15 17.5C7.993 17.5 2.5 12.007 2.5 5a1.667 1.667 0 0 1 .833-1.667z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
-                </svg>
+              <div class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3.333 3.333h3.334l1.666 4.167-2.083 1.25c.961 1.93 2.47 3.439 4.167 4.167l1.25-2.084L16.667 12.5v3.333A1.667 1.667 0 0115 17.5C7.993 17.5 2.5 12.007 2.5 5a1.667 1.667 0 01.833-1.667z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
               </div>
               <div>
                 <span class="contact-label">Telefon</span>
                 <a href="tel:+381117839034" class="contact-value">011 783 9034</a>
-                <a href="tel:+381631077654" class="contact-value" style="display:block; margin-top: 2px;">063 107 7654</a>
+                <a href="tel:+381631077654" class="contact-value" style="display:block;margin-top:2px">063 107 7654</a>
+              </div>
+            </li>
+            <li>
+              <div class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.3"/><path d="M10 6v4l2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Radno vreme</span>
+                <span class="contact-value">Pon–Pet: 12:00–19:00</span>
+                <span class="contact-value" style="display:block;margin-top:2px;color:var(--text-lt)">Sub–Ned: Zatvoreno</span>
               </div>
             </li>
           </ul>
-
-          <div class="hours-block">
-            <h3>Radno vreme</h3>
-            <table class="hours-table">
-              <tbody>
-                <tr>
-                  <td>Ponedeljak — Petak</td>
-                  <td>12:00 – 19:00</td>
-                </tr>
-                <tr>
-                  <td>Subota i Nedelja</td>
-                  <td class="closed">Zatvoreno</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
 
-        <div class="contact-form-wrap">
+        <div class="contact-form-wrap fade-up">
           <form class="contact-form" id="contact-form" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="ime">Ime i prezime</label>
-                <input type="text" id="ime" name="ime" autocomplete="name" placeholder="Marko Marković" required />
-              </div>
+            <div class="form-group">
+              <label for="ime">Ime i prezime</label>
+              <input type="text" id="ime" name="ime" autocomplete="name" placeholder="Marko Marković" required />
             </div>
             <div class="form-row two-col">
               <div class="form-group">
@@ -363,6 +528,9 @@
                 <option>Oralna hirurgija</option>
                 <option>Parodontologija</option>
                 <option>Dečja stomatologija</option>
+                <option>Endodoncija</option>
+                <option>Ortodoncija</option>
+                <option>Digitalna dijagnostika</option>
                 <option>Ostalo</option>
               </select>
             </div>
@@ -370,69 +538,65 @@
               <label for="poruka">Poruka (opciono)</label>
               <textarea id="poruka" name="poruka" rows="4" placeholder="Kratko opišite razlog posete ili postavite pitanje..."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">Pošalji zahtev</button>
+            <button type="submit" class="btn btn-navy btn-full">Pošalji zahtev</button>
             <p class="form-note">Odgovaramo u roku od jednog radnog dana.</p>
           </form>
           <div class="form-success" id="form-success" aria-live="polite" hidden>
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-              <circle cx="20" cy="20" r="18" stroke="#2d6a4f" stroke-width="1.5"/>
-              <path d="M12 20l6 6 10-12" stroke="#2d6a4f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="22" r="20" stroke="#2d6a4f" stroke-width="1.5"/><path d="M13 22l7 7 11-14" stroke="#2d6a4f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <h3>Zahvaljujemo!</h3>
             <p>Primili smo vaš zahtev. Kontaktiraćemo vas uskoro radi potvrde termina.</p>
           </div>
         </div>
+
       </div>
 
-      <!-- Map -->
       <div class="map-wrap">
         <iframe
-          title="Lokacija ordinacije Žugić na mapi"
+          title="Lokacija ordinacije Žugić"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.0!2d20.4769128!3d44.7924456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7165680fe953%3A0xb65d24cd3ce89fe4!2sStomatolo%C5%A1ka%20ordinacija%20%C5%BDugi%C4%87!5e0!3m2!1ssr!2srs!4v1715428000000!5m2!1ssr!2srs"
-          width="100%"
-          height="380"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
+          width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
+  <!-- ── FOOTER ───────────────────────────────────────────── -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="logo-name">Жугић</span>
-        <span class="logo-sub">Стоматолошка ординација</span>
+        <svg class="logo-tooth" viewBox="0 0 28 36" fill="none" style="color:rgba(201,169,110,0.7);width:22px" aria-hidden="true">
+          <path d="M14 1C10 1 6 3.5 4 7C2 10.5 2 14.5 3 18C4 20 5 22 5.5 24.5C6 27 6 29 7 31C7.5 32.5 9 34 10.5 33.5C12 33 12.5 31 13 29C13.3 27.5 13.7 26 14 26C14.3 26 14.7 27.5 15 29C15.5 31 16 33 17.5 33.5C19 34 20.5 32.5 21 31C22 29 22 27 22.5 24.5C23 22 24 20 25 18C26 14.5 26 10.5 24 7C22 3.5 18 1 14 1Z" fill="currentColor"/>
+        </svg>
+        <div>
+          <span class="footer-name">Жугић</span>
+          <span class="footer-sub">Стоматолошка ординација</span>
+        </div>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
           <h4>Adresa</h4>
-          <p>Generala Rajevskog 1<br />Beograd, Srbija</p>
+          <p>Generala Rajevskog 1<br>Vračar, Beograd</p>
         </div>
         <div class="footer-col">
           <h4>Kontakt</h4>
-          <p>
-            <a href="tel:+381117839034">011 783 9034</a><br />
-            <a href="tel:+381631077654">063 107 7654</a>
-          </p>
+          <p><a href="tel:+381117839034">011 783 9034</a><br><a href="tel:+381631077654">063 107 7654</a></p>
         </div>
         <div class="footer-col">
           <h4>Radno vreme</h4>
-          <p>Pon–Pet: 12:00–19:00<br />Sub–Ned: Zatvoreno</p>
+          <p>Pon–Pet: 12:00–19:00<br>Sub–Ned: Zatvoreno</p>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2024 Стоматолошка ординација Жугић · Beograd</p>
+        <p>© 2024 Стоматолошка ординација Жугић · Beograd, Srbija</p>
       </div>
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
